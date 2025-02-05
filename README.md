@@ -1,3 +1,3 @@
-# Academic Management System
+# uCMS - A Micro Content Management System
 
 ## Introduction
