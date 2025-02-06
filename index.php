@@ -1,3 +1,7 @@
+<?php
+$dateStr = (new \DateTimeImmutable())->format('F d, Y');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +12,7 @@
 </head>
 
 <body>
-
+    <h1>Today is <?= $dateStr ?></h1>
 </body>
 
 </html>
