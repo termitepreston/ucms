@@ -1,6 +1,25 @@
 <?php
-$dateStr = (new \DateTimeImmutable())->format('F d, Y');
-$total = 2 + 2;
+$isSubmitted = ($_SERVER['REQUEST_METHOD'] === 'POST');
+
+$isValid = true;
+
+$firstName = '';
+
+if ($isSubmitted) {
+    $firstName = filter_input(INPUT_POST, 'firstName');
+
+    if (strlen($firstName) < 3) {
+        $isValid = false;
+        $errorMessage = 'Invalid - name must contain at least 3 letters.';
+    }
+}
+
+if ($isSubmitted && $isValid) {
+    print "Hello, $firstName";
+    die();
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -9,38 +28,24 @@ $total = 2 + 2;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ucms: php overview</title>
+    <title>A Tiny Sticky Post-back script</title>
+    <style>
+        .error {
+            background: pink;
+            padding: 1rem;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Today is <?= $dateStr ?></h1>
-    <h1><?= "total = $total." ?></h1>
+    <form action="" method="post">
+        <?php if ($isSubmitted && !$isValid): ?>
+            <div class="error"><?= $errorMessage ?></div>
+        <?php endif ?>
 
-    <section>
-        <h1>Form processing in php</h1>
-        <p>
-        <form action="process.php" method="get">
-            <input type="text" id="firstName" name="firstName"><label for="firstName">First Name</label><br />
-            <label>
-                <input type="checkbox" name="toppings[]" value="olives">
-                Olives
-            </label>
-
-            <label>
-                <input type="checkbox" name="toppings[]" value="pepper">
-                Pepper
-            </label>
-
-            <label>
-                <!-- default value is 'on' -->
-                <input type="checkbox" name="toppings[]" value="garlic">
-                Garlic Salt
-            </label>
-
-            <input type="submit" value="Go!" />
-        </form>
-        </p>
-    </section>
+        <input type="text" name="firstName" id="firstName" value="<?= $firstName ?>" />
+        <input type="submit" value="Submit" />
+    </form>
 </body>
 
 </html>
