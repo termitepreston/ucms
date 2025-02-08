@@ -3,14 +3,28 @@
 require '../vendor/autoload.php';
 
 use MicroCMS\Connection as Connection;
+use MicroCMS\Migration as Migration;
 
 try {
-    Connection::get()->connect();
+    $pdo = Connection::get()->connect();
     print 'A connection to the PostgreSQL database sever has been established successfully.';
+
+    $migrate = new Migration($pdo);
+
+    $migrate->configure();
+
+    $migrate->tearDown();
 } catch (\PDOException $e) {
     print $e->getMessage();
 }
 
+$action = filter_input(INPUT_GET, 'action');
+
+switch ($action) {
+    case 'seed':
+        displaySeed();
+        break;
+}
 
 $isSubmitted = ($_SERVER['REQUEST_METHOD'] === 'POST');
 

@@ -9,7 +9,7 @@ class Connection
 
     private static $conn;
 
-    public function connect()
+    public function connect(): \PDO
     {
         $params = parse_ini_file(joinPaths(__DIR__, 'database.ini'));
 
@@ -31,11 +31,13 @@ class Connection
         $pdo = new \PDO($connStr);
 
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+        return $pdo;
     }
 
     public static function get()
     {
-        if (static::$conn === null) {
+        if (null === static::$conn) {
             static::$conn = new static();
         }
 

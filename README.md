@@ -4,6 +4,15 @@
 
 uCMS also stylized MicroCMS is a miniature blog engine.
 
+## Tools used
+
+1. Xdebug
+    - Xdebug helper for chrome.
+2. Composer
+3. DBeaver: as a vendor agnostic DB browser.
+4. Postgresql:
+    - pdo_pgsql driver.
+5. UUID.
 
 ## Design Documentation
 
