@@ -1,26 +1,49 @@
 <?php
+
 $isSubmitted = ($_SERVER['REQUEST_METHOD'] === 'POST');
 
-$isValid = true;
-
-$firstName = '';
+$pCode = '';
+$pPrice = '';
+$errors = [];
 
 if ($isSubmitted) {
-    $firstName = filter_input(INPUT_POST, 'firstName');
+    $pCode = filter_input(INPUT_POST, 'productCode', FILTER_CALLBACK, [
+        'options' => function ($value) {
+            $sanitized = filter_var($value, FILTER_SANITIZE_SPECIAL_CHARS);
 
-    if (strlen($firstName) < 3) {
-        $isValid = false;
-        $errorMessage = 'Invalid - name must contain at least 3 letters.';
+            $trimmed = trim($sanitized);
+
+            return (strlen($trimmed) >= 5) ? $trimmed : false;
+        }
+    ]);
+
+    if (empty($pCode)) {
+        $errors[] = "Username should have at least five characters.";
+    }
+
+    $pPrice = filter_input(
+        INPUT_POST,
+        'productPrice',
+        FILTER_VALIDATE_FLOAT,
+        [
+            'flags' => FILTER_FLAG_ALLOW_THOUSAND | FILTER_FLAG_ALLOW_SCIENTIFIC
+        ]
+    );
+
+    if (empty($pPrice)) {
+        $errors[] = "Invalid price input.";
+    }
+
+    $isValid = empty($errors);
+
+    if ($isValid) {
+        print "Showing details for product {$pCode}...";
+        die();
     }
 }
 
-if ($isSubmitted && $isValid) {
-    print "Hello, $firstName";
-    die();
-}
-
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +51,7 @@ if ($isSubmitted && $isValid) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Tiny Sticky Post-back script</title>
+    <title>Products</title>
     <style>
         .error {
             background: pink;
@@ -40,11 +63,17 @@ if ($isSubmitted && $isValid) {
 <body>
     <form action="" method="post">
         <?php if ($isSubmitted && !$isValid): ?>
-            <div class="error"><?= $errorMessage ?></div>
+            <ul class="error">
+                <?php foreach ($errors as $error): ?>
+                    <li><?= $error ?></li>
+                <?php endforeach ?>
+            </ul>
         <?php endif ?>
-
-        <input type="text" name="firstName" id="firstName" value="<?= $firstName ?>" />
-        <input type="submit" value="Submit" />
+        <label for="product-code">Product Code</label><input type="text" name="productCode" id="product-code" value="<?= $pCode ?>">
+        <br />
+        <label for="product-price">Product Price</label><input type="text" name="productPrice" id="product-price" value="<?= $pPrice ?>">
+        <br />
+        <input type="submit" value="Submit">
     </form>
 </body>
 

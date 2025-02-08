@@ -1,0 +1,20 @@
+{
+    "name": "ucms/ucms",
+    "authors": [
+        {
+            "name": "Alazar Gebremedhin",
+            "email": "alazar4018@gmail.com"
+        },
+        {
+            "name": "Mihireteab Simachew"
+        },
+        {
+            "name": "Yonatan Afework"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MicroCMS\\": "src/"
+        }
+    }
+}
