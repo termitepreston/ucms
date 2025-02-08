@@ -2,6 +2,8 @@
 
 namespace MicroCMS;
 
+require_once __DIR__ . '/' . 'Functions.php';
+
 class Connection
 {
 
@@ -9,10 +11,10 @@ class Connection
 
     public function connect()
     {
-        $params = parse_ini_file('database.ini');
+        $params = parse_ini_file(joinPaths(__DIR__, 'database.ini'));
 
 
-        if ($params !== false) {
+        if ($params === false) {
             throw new \Exception("Error reading database configuration.");
         }
 

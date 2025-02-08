@@ -1,6 +1,15 @@
 <?php
 
+require '../vendor/autoload.php';
 
+use MicroCMS\Connection as Connection;
+
+try {
+    Connection::get()->connect();
+    print 'A connection to the PostgreSQL database sever has been established successfully.';
+} catch (\PDOException $e) {
+    print $e->getMessage();
+}
 
 
 $isSubmitted = ($_SERVER['REQUEST_METHOD'] === 'POST');
