@@ -15,6 +15,7 @@ uCMS also stylized MicroCMS is a miniature blog engine.
 5. UUID.
 6. Usage of type annotations.
 7. Post-back scripts for validation purposes.
+8. Make heavy use of CSS variables for styling.
 
 ## Design Documentation
 

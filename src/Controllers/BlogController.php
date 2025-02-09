@@ -24,7 +24,7 @@ class BlogController
 
         $isSubmitted = ($_SERVER['REQUEST_METHOD'] === 'POST');
         $isValid = true;
-        $username = $_SESSION['user']['username'] ?? '';
+        $username = $_SESSION['username'] ?? '';
 
 
         if ($isSubmitted) {
@@ -161,7 +161,7 @@ class BlogController
 
         $isSubmitted = ($_SERVER['REQUEST_METHOD'] === 'POST');
         $isValid = true;
-        $username = $_SESSION['user']['username'] ?? '';
+        $username = $_SESSION['username'] ?? '';
 
         // Check whether if the requested id exists.
         $blogId = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);

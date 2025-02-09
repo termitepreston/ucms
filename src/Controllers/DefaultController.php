@@ -39,14 +39,9 @@ class DefaultController
 
         // First check if there is an active session.
         // It's now array. Get on with it.
-        if (isset($_SESSION['user'])) {
-            $roles = $_SESSION['user']['roles'];
+        if (isset($_SESSION['userId']) && $_SESSION['loggedIn'] === true) {
 
-            $isAdmin = in_array("admin", $roles);
-
-            if ($isAdmin) {
-                $this->dashboard();
-            }
+            $this->dashboard();
         } else {
             header('Location: index.php?action=login');
             die();
@@ -59,6 +54,10 @@ class DefaultController
         $blogs = $this->fetchAllBlogs();
 
         require_once self::VIEWS . '__header.php';
+
+        $roles = $_SESSION['roles'];
+
+        $isAdmin = in_array("admin", $roles, true);
 
         require_once self::VIEWS . 'dashboard.php';
 
@@ -89,7 +88,30 @@ class DefaultController
 
 
 
+    private function fetchUserFromId(int $id)
+    {
+        try {
+            $stmt = $this->pdo->prepare(
+                "SELECT username
+             FROM users
+             WHERE id = :id"
+            );
 
+            $stmt->bindValue(":id", $id);
+
+            $stmt->execute();
+
+            $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+            if (!$row) {
+                throw new \Exception("User with $id not found.");
+            }
+
+            return $row;
+        } catch (\PDOException $e) {
+            throw $e;
+        }
+    }
 
 
 

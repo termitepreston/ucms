@@ -1,36 +1,34 @@
 <div class="form-container">
-    <h2>Login or <a href="index.php?action=register">Register</a></h2>
-    <form id="loginForm" action="#" method="post" onsubmit="return validateForm()">
-
-        <?php require_once __DIR__ . '/renderErrors.php' ?>
-        <div class="form-group">
-            <label for="userName">Username:</label>
-            <input type="text" id="userName" name="username" onblur="validateUsername()" onfocus="clearError('userName')" class="" aria-describedby="userNameError">
-            <p id="userNameError" class="error-message invalid" aria-live="assertive">Username is required.</p>
-            <p id="userNameValid" class="error-message valid" aria-live="assertive">Looks good!</p>
-        </div>
-
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <div class="password-input-group">
-                <input type="password" id="password" name="password" onblur="validatePassword()" onfocus="clearError('password')" class="" aria-describedby="passwordError">
-                <button type="button" id="togglePassword" aria-label="Show password" onclick="togglePasswordVisibility()">Show</button>
+    <div class="stack-vertical stack-scale-7">
+        <h2>Login or <a href="index.php?action=register">Register</a></h2>
+        <form id="loginForm" action="#" method="post" onsubmit="return validateForm()">
+            <?php require_once __DIR__ . '/renderErrors.php' ?>
+            <div class="form-item">
+                <div class="text-input__label-wrapper"><label class="label" for="userName">Username:</label></div>
+                <div class="text-input__field-outer-wrapper">
+                    <div class="text-input__field-wrapper"><input type="text" id="userName" class="text-input" name="username" onblur="validateUsername()" onfocus="clearError('userName')" class="" aria-describedby="userNameError"></div>
+                </div>
+                <p id="userNameError" class="error-message invalid" aria-live="assertive">Username is required.</p>
             </div>
-            <p id="passwordError" class="error-message invalid" aria-live="assertive">Password is required.</p>
-            <p id="passwordValid" class="error-message valid" aria-live="assertive">Password entered.</p>
-        </div>
-
-        <div class="form-actions">
-            <button type="submit" id="submitButton" disabled>Login</button>
-        </div>
-    </form>
+            <div class="form-item">
+                <div class="text-input__label-wrapper"><label class="label" for="password">Password:</label></div>
+                <div class="text-input__field-outer-wrapper">
+                    <div class="text-input__field-wrapper"><input type="password" class="text-input" id="password" name="password" onblur="validatePassword()" onfocus="clearError('password')" class="" aria-describedby="passwordError"></div>
+                </div>
+                <p id="passwordError" class="error-message invalid" aria-live="assertive">Password is required.</p>
+            </div>
+            <div class="form-item">
+                <button class="button button--primary" type="submit" id="loginButton" disabled>Login</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 <script>
     const loginForm = document.getElementById('loginForm');
     const userNameInput = document.getElementById('userName');
     const passwordInput = document.getElementById('password');
-    const submitButton = document.getElementById('submitButton');
+    const submitButton = document.getElementById('loginButton');
 
     let isUserNameValid = false;
     let isPasswordValid = false;
@@ -41,7 +39,6 @@
             isUserNameValid = false;
         } else {
             clearError('userName');
-            showValid('userName'); // Example for valid feedback, can be removed
             userNameInput.classList.remove('invalid-input');
             userNameInput.classList.add('valid-input');
             isUserNameValid = true;
@@ -55,7 +52,6 @@
             isPasswordValid = false;
         } else {
             clearError('password');
-            showValid('password'); // Example for valid feedback, can be removed
             passwordInput.classList.remove('invalid-input');
             passwordInput.classList.add('valid-input');
             isPasswordValid = true;

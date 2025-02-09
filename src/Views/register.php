@@ -32,13 +32,7 @@
                 </div>
                 <div id="emailError" class="error" style="display: none;"></div>
             </div>
-            <div class="form-item">
-                <div class="text-input__label-wrapper"><label class="label" for="blogTitle">Blog Title:</label></div>
-                <div class="text-input__field-outer-wrapper">
-                    <div class="text-input__field-wrapper"><input type="text" class="text-input" id="blogTitle" name="blogTitle" onblur="validateBlogTitle()" onfocus="clearError('blogTitleError')" required></div>
-                </div>
-                <div id="blogTitleError" class="error" style="display: none;"></div>
-            </div>
+
             <div class="form-item">
                 <div class="text-input__label-wrapper"><label class="label" for="profilePhoto">Profile Photo:</label></div>
                 <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*">
@@ -208,11 +202,10 @@
         const isFirstNameValid = validateFirstName();
         const isLastNameValid = validateLastName();
         const isEmailValid = validateEmail();
-        const isBlogTitleValid = validateBlogTitle();
         const isPasswordValid = validatePassword();
         const isPasswordConfirmationValid = validatePasswordConfirmation();
 
-        if (isUsernameValid && isFirstNameValid && isLastNameValid && isBlogTitleValid && isEmailValid && isPasswordValid && isPasswordConfirmationValid) {
+        if (isUsernameValid && isFirstNameValid && isLastNameValid && isEmailValid && isPasswordValid && isPasswordConfirmationValid) {
             enableSubmitButton();
             return true; // Form is valid
         } else {

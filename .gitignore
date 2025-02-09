@@ -1,6 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/phpstorm,phpunit,laravel,symfony,composer
 # Edit at https://www.toptal.com/developers/gitignore?templates=phpstorm,phpunit,laravel,symfony,composer
 
+### Uploads ###
+/uploads/
+/src/uploads/
+
 ### Composer ###
 composer.phar
 /vendor/
