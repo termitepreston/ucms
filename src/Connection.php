@@ -7,7 +7,7 @@ require_once __DIR__ . '/' . 'Functions.php';
 class Connection
 {
 
-    private static $conn;
+    private static ?Connection $conn = null;
 
     public function connect(): \PDO
     {
@@ -35,7 +35,7 @@ class Connection
         return $pdo;
     }
 
-    public static function get()
+    public static function getInstance(): Connection
     {
         if (null === static::$conn) {
             static::$conn = new static();
@@ -46,7 +46,23 @@ class Connection
 
     protected function __construct() {}
 
-    private function __clone() {}
+    /**
+     * Prevent cloning of the instance.
+     *
+     * @throws \Exception If cloning is attempted.
+     */
+    private function __clone()
+    {
+        throw new \Exception("Cannot clone a Connection instance.");
+    }
 
-    private function __wakeup() {}
+    /**
+     * Prevent un-serialization of the instance.
+     *
+     * @throws \Exception If un-serialization is attempted.
+     */
+    public function __wakeup()
+    {
+        throw new \Exception("Cannot unserialize a Connection instance.");
+    }
 }

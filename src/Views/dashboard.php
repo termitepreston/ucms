@@ -1,6 +1,7 @@
 <section>
+    <h3><a href="index.php?action=logout">Logout</a></h3>
     <h2>Manage Blog Entries</h2>
-    <a class="button" href="index.php?action=newPage">Add a new entry</a>
+    <a class="button" href="index.php?action=addBlog">Add a new entry</a>
     <table>
         <thead>
             <tr>
@@ -17,9 +18,9 @@
                     <td><?= $blog["slug"] ?></td>
                     <td><?= $this->fetchUserFromId($blog["authorId"])["username"] ?></td>
                     <td>
-                        <a id="removePageLink" class="button" href="index.php?action=removePage&id=<?= $blog["id"] ?>" data-title="<?= $blog['title'] ?>">Remove</a>
-                        <a class="button" href="index.php?action=editPage&id=<?= $blog["id"] ?>">Edit</a>
-                        <a class="button" href="index.php?action=viewPage&id=<?= $blog["id"] ?>">Visit</a>
+                        <a id="removePageLink" class="button" href="index.php?action=deleteBlog&id=<?= $blog["id"] ?>" data-title="<?= $blog['title'] ?>">Remove</a>
+                        <a class="button" href="index.php?action=editBlog&id=<?= $blog["id"] ?>">Edit</a>
+                        <a class="button" href="index.php?action=visitBlog&id=<?= $blog["id"] ?>">Visit</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -44,7 +45,3 @@
         }
     });
 </script>
-
-</body>
-
-</html>
