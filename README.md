@@ -13,6 +13,7 @@ uCMS also stylized MicroCMS is a miniature blog engine.
 4. Postgresql:
     - pdo_pgsql driver.
 5. UUID.
+6. Usage of type annotations.
 
 ## Design Documentation
 
