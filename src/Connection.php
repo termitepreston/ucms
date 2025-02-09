@@ -11,24 +11,13 @@ class Connection
 
     public function connect(): \PDO
     {
-        $params = parse_ini_file(joinPaths(__DIR__, 'database.ini'));
+        $dbHost = $_ENV['DB_HOST'];
+        $dbUser = $_ENV['DB_USER'];
+        $dbPassword = $_ENV['DB_PASSWORD'];
+        $dbName = $_ENV['DB_NAME'];
 
 
-        if ($params === false) {
-            throw new \Exception("Error reading database configuration.");
-        }
-
-        // Connect to postgresql
-        $connStr = sprintf(
-            "pgsql:host=%s;port=%d;dbname=%s;user=%s;password=%s",
-            $params['host'],
-            $params['port'],
-            $params['database'],
-            $params['user'],
-            $params['password']
-        );
-
-        $pdo = new \PDO($connStr);
+        $pdo = new \PDO("pgsql:host=$dbHost;dbname=$dbName", $dbUser, $dbPassword);
 
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 

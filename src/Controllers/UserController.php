@@ -10,7 +10,6 @@ class UserController
 {
     const VIEWS = __DIR__ . '/../Views/';
     const MAX_SIZE = 5 * 1024 * 1024;
-    const UPLOAD_DIR = __DIR__ . '/../uploads/';
 
 
     private \PDO $pdo;
@@ -437,12 +436,12 @@ class UserController
                 // 3. Generate a Unique Filename (Security and collision prevention)
                 $fileExtension = pathinfo($profilePhotoFileName, PATHINFO_EXTENSION); // Get original file extension (e.g., "jpg")
                 $uniqueFilename = uniqid('profile_') . '_' . bin2hex(random_bytes(8)) . '.' . strtolower($fileExtension); // Unique filename
-                $destinationPath = self::UPLOAD_DIR . $uniqueFilename;
+                $destinationPath = UPLOAD_DIR . $uniqueFilename;
 
-                if (!is_dir(self::UPLOAD_DIR)) {
-                    if (!mkdir(self::UPLOAD_DIR, 0777, true)) { // 0777 is generally too permissive for production - adjust permissions securely
+                if (!is_dir(UPLOAD_DIR)) {
+                    if (!mkdir(UPLOAD_DIR, 0777, true)) { // 0777 is generally too permissive for production - adjust permissions securely
                         $errors['profilePhoto'] = "Server error: Could not create upload directory.";
-                        error_log("Error creating upload directory: " . self::UPLOAD_DIR);
+                        error_log("Error creating upload directory: " . UPLOAD_DIR);
                     }
                 }
 
@@ -615,12 +614,12 @@ class UserController
                 // 3. Generate a Unique Filename (Security and collision prevention)
                 $fileExtension = pathinfo($profilePhotoFileName, PATHINFO_EXTENSION); // Get original file extension (e.g., "jpg")
                 $uniqueFilename = uniqid('profile_') . '_' . bin2hex(random_bytes(8)) . '.' . strtolower($fileExtension); // Unique filename
-                $destinationPath = self::UPLOAD_DIR . $uniqueFilename;
+                $destinationPath = UPLOAD_DIR . $uniqueFilename;
 
-                if (!is_dir(self::UPLOAD_DIR)) {
-                    if (!mkdir(self::UPLOAD_DIR, 0777, true)) { // 0777 is generally too permissive for production - adjust permissions securely
+                if (!is_dir(UPLOAD_DIR)) {
+                    if (!mkdir(UPLOAD_DIR, 0777, true)) { // 0777 is generally too permissive for production - adjust permissions securely
                         $errors['profilePhoto'] = "Server error: Could not create upload directory.";
-                        error_log("Error creating upload directory: " . self::UPLOAD_DIR);
+                        error_log("Error creating upload directory: " . UPLOAD_DIR);
                     }
                 }
 

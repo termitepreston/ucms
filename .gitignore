@@ -3,7 +3,7 @@
 
 ### Uploads ###
 /uploads/
-/src/uploads/
+/public/uploads/
 
 ### Composer ###
 composer.phar
