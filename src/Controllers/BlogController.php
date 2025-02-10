@@ -40,7 +40,7 @@ class BlogController
                 if ($this->insertBlog($results['sanitizedInput'], $authorId)) {
 
 
-                    header('Location: ""');
+                    header('Location: index.php?action=home');
                     die();
                 } else {
                     // Username already exists...
@@ -217,6 +217,7 @@ class BlogController
                 } else {
                     // Username already exists...
                     $results['errors']['username'] = "User {$results['sanitizedInput']['username']} already exists.";
+                    $isValid = false;
                 }
             }
         }

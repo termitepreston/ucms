@@ -8,16 +8,10 @@
             <div class="text-input__label-wrapper"><label for="blogEntryTitle" class="label">Blog Entry Title</label></div>
             <div class="text-input__field-outer-wrapper">
                 <div class="text-input__field-wrapper" data-invalid="true">
-                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="text-input__invalid-icon" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8,1C4.2,1,1,4.2,1,8s3.2,7,7,7s7-3.1,7-7S11.9,1,8,1z M7.5,4h1v5h-1C7.5,9,7.5,4,7.5,4z M8,12.2 c-0.4,0-0.8-0.4-0.8-0.8s0.3-0.8,0.8-0.8c0.4,0,0.8,0.4,0.8,0.8S8.4,12.2,8,12.2z"></path>
-                        <path d="M7.5,4h1v5h-1C7.5,9,7.5,4,7.5,4z M8,12.2c-0.4,0-0.8-0.4-0.8-0.8s0.3-0.8,0.8-0.8 c0.4,0,0.8,0.4,0.8,0.8S8.4,12.2,8,12.2z" data-icon-path="inner-path" opacity="0"></path>
-                    </svg>
                     <input type="text" id="blogEntryTitle" class="text-input text-input__invalid" name="blogEntryTitle" onblur="validateBlogEntryTitle()" onfocus="clearError('blogEntryTitleError')" value="<?= $blog['title'] ?? '' ?>" required>
                     <span class="text-input__counter-alert" role="alert" aria-live="assertive" aria-atomic="true"></span>
                 </div>
-                <div class="form-requirement" id="test4-error-msg" dir="ltr">
-                    Your password must be at least 6 characters as well as contain at least one uppercase one lowercase, and one number.
-                </div>
+                
             </div>
             <div id="blogEntryTitleError" class="error" style="display: none;"></div>
         </div>

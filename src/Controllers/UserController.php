@@ -47,7 +47,7 @@ class UserController
         session_write_close(); // Close session for writing immediately
 
         // Redirect to the login page or homepage
-        header("Location: index.php"); // Or header("Location: /"); for homepage
+        header("Location: index.php?action=home"); // Or header("Location: /"); for homepage
         exit;
     }
 
@@ -99,6 +99,8 @@ class UserController
 
                     session_write_close();
                 }
+            } else {
+                throw new \Exception("User password combination error.");
             }
         } catch (\PDOException $e) {
             throw $e;
@@ -128,8 +130,9 @@ class UserController
 
                     header("Location: index.php?action=home");
                     die();
-                } catch (\PDOException $e) {
+                } catch (\Exception $e) {
                     $results['errors']['internal'] = $e->getMessage();
+                    $isValid = false;
                 }
             }
         }
@@ -149,7 +152,7 @@ class UserController
         $sanitizedInput = [];
 
         // 1. Username validation and sanitization.
-        $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES); // Sanitize username
+        $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS, FILTER_FLAG_NO_ENCODE_QUOTES); // Sanitize username
         if ($username === null || $username === false) {
             $errors['username'] = 'Invalid username input.'; // Filter error, should not happen in a well-formed form.
         } else {
@@ -198,6 +201,7 @@ class UserController
                 } else {
                     // Username already exists...
                     $results['errors']['username'] = "User {$results['sanitizedInput']['username']} already exists.";
+                    $isValid = false;
                 }
             }
         }

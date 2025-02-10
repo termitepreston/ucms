@@ -1348,3 +1348,11 @@ input[data-invalid]~.form-requirement,
 .fieldset *::after {
     box-sizing: inherit;
 }
+
+/* Apply typography tokens on text tags. */
+h1 {
+    font-size: var(--heading-07-font-size);
+    font-weight: var(--heading-07-font-weight);
+    line-height: var(--heading-07-line-height);
+    letter-spacing: var(--heading-07-letter-spacing);
+}
