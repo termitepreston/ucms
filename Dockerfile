@@ -5,4 +5,10 @@ RUN install-php-extensions gd xdebug pdo pdo_pgsql
 
 RUN a2enmod rewrite
 
+COPY . /var/www/html/
+
+COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
+
+RUN composer update
+
 RUN chown -R www-data:www-data /var/www/html
