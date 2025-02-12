@@ -11,10 +11,11 @@ class Connection
 
     public function connect(): \PDO
     {
-        $dbHost = $_ENV['DB_HOST'];
-        $dbUser = $_ENV['DB_USER'];
-        $dbPassword = $_ENV['DB_PASSWORD'] ?? '';
-        $dbName = $_ENV['DB_NAME'];
+        $dbHost = getenv('DB_HOST');
+        $dbUser = getenv('DB_USER');
+        $dbPassword = getenv('DB_PASSWORD') ?? '';
+        $dbName = getenv('DB_NAME');
+
 
         $pdo = new \PDO("pgsql:host=$dbHost;dbname=$dbName", $dbUser, $dbPassword);
 
