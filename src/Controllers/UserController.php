@@ -138,7 +138,7 @@ class UserController
         }
         require_once self::VIEWS . 'login.php';
 
-        require_once self::VIEWS . '__header.php';
+        require_once self::VIEWS . '__footer.php';
     }
 
     /**
