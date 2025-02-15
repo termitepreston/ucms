@@ -11,7 +11,7 @@
                     <input type="text" id="blogEntryTitle" class="text-input text-input__invalid" name="blogEntryTitle" onblur="validateBlogEntryTitle()" onfocus="clearError('blogEntryTitleError')" value="<?= $blog['title'] ?? '' ?>" required>
                     <span class="text-input__counter-alert" role="alert" aria-live="assertive" aria-atomic="true"></span>
                 </div>
-                
+
             </div>
             <div id="blogEntryTitleError" class="error" style="display: none;"></div>
         </div>
@@ -25,9 +25,7 @@
         <div class="form-item">
             <div class="text-input__label-wrapper"><label for="blogEntryMarkdown" class="label">Markdown Text:</label></div>
             <div class="text-area__wrapper">
-                <textarea class="text-area" id="blogEntryMarkdown" name="blogEntryMarkdown" rows="10" style="width: 100%" required>
-                    <?= $blog['content'] ?? '' ?>
-                </textarea>
+                <textarea class="text-area" id="blogEntryMarkdown" name="blogEntryMarkdown" rows="10" style="width: 100%" required><?= $blog['content'] ?? '' ?></textarea>
             </div>
         </div>
         <div class="form-item">

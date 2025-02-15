@@ -96,7 +96,7 @@
                                                         </svg>
                                                         <input type="text" class="TextInput TextInput--large Layout--sizeLarge" placeholder="username" name="username" id="username" autocapitalize="none" autocomplete="username" value onblur="validateUsername();" onfocus="clearError('username');" />
                                                     </div>
-                                                    <div class="FormRequirement">Enter your username.</div>
+                                                    <div class="FormRequirement"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -127,7 +127,7 @@
                                                             </div>
                                                         </span>
                                                     </div>
-                                                    <div class="FormRequirement">Enter your password correctly.</div>
+                                                    <div class="FormRequirement"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -194,21 +194,25 @@
         const input = document.getElementById(inputId);
         const inputWrapper = document.querySelector(`div:has(> #${inputId})`);
         const errorIcon = document.querySelector(`div:has(> #${inputId}) svg`);
+        const messageContainer = document.querySelector(`div:has(> #${inputId}) ~ .FormRequirement`);
 
         input.toggleAttribute("data-invalid");
         inputWrapper.toggleAttribute("data-invalid");
         errorIcon.toggleAttribute("data-visible");
+        messageContainer.innerHTML = message;
     }
 
     function clearError(inputId) {
         const input = document.getElementById(inputId);
         const inputWrapper = document.querySelector(`div:has(> #${inputId})`);
         const errorIcon = document.querySelector(`div:has(> #${inputId}) svg`);
+        const messageContainer = document.querySelector(`div:has(> #${inputId}) ~ .FormRequirement`);
 
 
         input.removeAttribute("data-invalid");
         inputWrapper.removeAttribute("data-invalid");
         errorIcon.removeAttribute("data-visible");
+        messageContainer.innerHTML = '';
     }
 
     function togglePasswordVisibility() {

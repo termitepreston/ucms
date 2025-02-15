@@ -509,4 +509,53 @@ class BlogController
 
         return $html;
     }
+
+    private function testMdToHtml()
+    {
+        $md1 = <<<EOD
+# The Wonders of Fictional Flora
+
+Paragraph 1:  Imagine a world painted not just with familiar greens and browns, but vibrant hues of cerulean foliage and crimson bark.  In this fantastical ecosystem, plants possess abilities beyond mere sustenance.  Consider the Whisperwind Willow, its leaves rustling not with the breeze, but with secrets whispered on the wind, or the Sunstone Bloom, petals radiating warmth like a miniature sun.  This exploration into fictional flora, as detailed further in this [comprehensive guide to fantastical botany](https://www.google.com/url?sa=E&source=gmail&q=https://www.example-fictional-botany.com), reveals the boundless creativity of imagined nature.
+
+## Exploring Unique Adaptations
+
+Paragraph 2: Fictional plants thrive on extraordinary adaptations.  Think about the Cloudvine, clinging to sky islands with roots that absorb atmospheric moisture, or the Crystal Tree, its branches composed of shimmering quartz, channeling subterranean energies.  Unordered lists can help categorize these wonders:
+
+  - Luminescent Flora: Plants that emit their own light, often found in subterranean grottos or twilight forests.
+  - Carnivorous Vines: Mobile plants that actively hunt and consume insects or even small creatures.
+  - Symbiotic Fungi:  Complex networks of fungi that integrate with tree roots, sharing nutrients and information.
+
+![A Fictional Plant](about:sanitized)
+
+### The Cycle of the Lumiflora
+
+Paragraph 3: The life cycle of these fictional plants can be just as captivating. The Lumiflora, for instance, follows a rhythmic illumination cycle.
+
+1.  **Seed Dormancy:** Seeds remain inert until triggered by specific lunar phases.
+2.  **Sprout Illumination:**  Seedlings emerge, emitting a faint glow that intensifies with growth.
+3.  **Full Bloom Luminescence:**  The plant reaches maturity, radiating a vibrant light that attracts nocturnal pollinators.
+4.  **Seed Dispersal (Phototropic):**  Seeds are released, often drifting on light currents created by their own luminescence.
+
+> "Nature, even when imagined, holds a mirror to our own realities, reflecting the intricate dance of life and adaptation." -  Professor Eldrune, Fictional Botanist.
+
+Paragraph 4:  Sometimes, the most intriguing aspects are hidden beneath the surface.  Consider this snippet of pseudo-code outlining the growth algorithm for the Everbranch Tree:
+
+```pseudocode
+function growEverbranch(treeNode):
+  if treeNode.age < maxAge:
+    if randomChance(branchingProbability):
+      createBranch(treeNode)
+    else:
+      treeNode.increaseHeight()
+    waitForTime(growthInterval)
+    growEverbranch(treeNode) // Recursive growth
+  else:
+    treeNode.stopGrowing()
+```
+
+## Conclusion: The Allure of the Unseen
+
+Paragraph 5:  The allure of fictional flora lies not just in their fantastical properties, but in the way they expand our understanding and appreciation for the natural world, both real and imagined.  These botanical fantasies remind us that the universe is brimming with possibilities, waiting to be discovered, or perhaps, to be invented.  Let us continue to explore these imagined green realms, for they enrich our perception of life itself.
+EOD;
+    }
 }
