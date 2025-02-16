@@ -1,5 +1,5 @@
 <main class="login-wrapper">
-    <div class="App">
+    <div class="App" data-bg-img-2="true">
         <div class="AppContainer">
             <div class="AnimatedBackground__container">
                 <div class="AnimatedBackground SetCyanMagentaPurple">

@@ -1,6 +1,6 @@
-<section>
+<section style="padding-block-start: 3rem;">
     <h3><a href="index.php?action=logout">Logout</a></h3>
-    <div class="table-container">
+    <div class="table-container" style="max-inline-size: 66rem; margin-inline: auto;">
         <div class="table-header">
             <h4 class="table-header__title">Blog posts</h4>
             <p class="table-header__description">Manage Blog Entries (<?= $isAdmin ? 'admin' : 'author' ?> version)</p>
@@ -38,9 +38,9 @@
                             <td><?= $blog["slug"] ?></td>
                             <td><?= $this->fetchUserFromId($blog["authorId"])["username"] ?></td>
                             <td>
-                                <a id="removePageLink" class="button button--primary" href="index.php?action=deleteBlog&id=<?= $blog["id"] ?>" data-title="<?= $blog['title'] ?>">Remove</a>
-                                <a class="button button--primary" href="index.php?action=editBlog&id=<?= $blog["id"] ?>">Edit</a>
-                                <a class="button button--primary" href="index.php?action=visitBlog&id=<?= $blog["id"] ?>">Visit</a>
+                                <a id="removePageLink" class="Button Button--primary" href="index.php?action=deleteBlog&id=<?= $blog["id"] ?>" data-title="<?= $blog['title'] ?>">Remove</a>
+                                <a class="Button Button--primary" href="index.php?action=editBlog&id=<?= $blog["id"] ?>">Edit</a>
+                                <a class="Button Button--primary" href="index.php?action=visitBlog&id=<?= $blog["id"] ?>">Visit</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

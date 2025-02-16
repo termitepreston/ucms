@@ -369,37 +369,6 @@ table {
     --button-separator: var(--gray-100);
     --button-disabled: var(--gray-70);
 
-    /* TAGS */
-    --tag-bg-gray: var(--gray-70);
-    --tag-color-gray: var(--gray-20);
-    --tag-hover-gray: var(--gray-70-hover);
-    --tag-border-gray: var(--gray-50);
-    --tag-bg-cool-gray: var(--cool-gray-70);
-    --tag-color-cool-gray: var(--cool-gray-20);
-    --tag-hover-cool-gray: var(--cool-gray-70-hover);
-    --tag-border-cool-gray: var(--cool-gray-50);
-    --tag-bg-warm-gray: var(--warm-gray-70);
-    --tag-color-warm-gray: var(--warm-gray-20);
-    --tag-hover-warm-gray: var(--cool-warm-70-hover);
-    --tag-border-warm-gray: var(--cool-warm-50);
-    --tag-bg-red: var(--red-70);
-    --tag-color-red: var(--red-20);
-    --tag-hover-red: var(--red-70-hover);
-    --tag-border-red: var(--red-50);
-    --tag-bg-magenta: var(--magenta-70);
-    --tag-color-magenta: var(--magenta-20);
-    --tag-hover-magenta: var(--magenta-70-hover);
-    --tag-border-magenta: var(--magenta-50);
-    --tag-bg-purple: var(--purple-70);
-    --tag-color-purple: var(--purple-20);
-    --tag-hover-purple: var(--purple-70-hover);
-    --tag-border-purple: var(--purple-50);
-    --tag-bg-blue: var(--blue-70);
-    --tag-color-blue: var(--blue-20);
-    --tag-hover-blue: var(--blue-70-hover);
-    --tag-border-blue: var(--blue-50);
-    /* TODO: teal, cyan, green */
-
 
     /* NOTIFICATIONS */
     --notification-bg-error: var(--gray-90);
@@ -527,10 +496,6 @@ table {
     --spacing-11: 5rem;
     --spacing-12: 6rem;
     --spacing-13: 10rem;
-    --fluid-spacing-01: 0;
-    --fluid-spacing-02: 2vw;
-    --fluid-spacing-03: 5vw;
-    --fluid-spacing-04: 10vw;
     --caption-01-font-size: 0.75rem;
     --caption-01-font-weight: 400;
     --caption-01-line-height: 1.33333;
@@ -554,32 +519,10 @@ table {
     --helper-text-02-font-weight: 400;
     --helper-text-02-line-height: 1.28572;
     --helper-text-02-letter-spacing: 0.16px;
-    --body-short-01-font-size: 0.875rem;
-    --body-short-01-font-weight: 400;
-    --body-short-01-line-height: 1.28572;
-    --body-short-01-letter-spacing: 0.16px;
-    --body-short-02-font-size: 1rem;
-    --body-short-02-font-weight: 400;
-    --body-short-02-line-height: 1.375;
-    --body-short-02-letter-spacing: 0;
     --body-long-01-font-size: 0.875rem;
     --body-long-01-font-weight: 400;
     --body-long-01-line-height: 1.42857;
     --body-long-01-letter-spacing: 0.16px;
-    --body-long-02-font-size: 1rem;
-    --body-long-02-font-weight: 400;
-    --body-long-02-line-height: 1.5;
-    --body-long-02-letter-spacing: 0;
-    --code-01-font-family: 'IBM Plex Mono', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', monospace;
-    --code-01-font-size: 0.75rem;
-    --code-01-font-weight: 400;
-    --code-01-line-height: 1.33333;
-    --code-01-letter-spacing: 0.32px;
-    --code-02-font-family: 'IBM Plex Mono', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', monospace;
-    --code-02-font-size: 0.875rem;
-    --code-02-font-weight: 400;
-    --code-02-line-height: 1.42857;
-    --code-02-letter-spacing: 0.32px;
     --heading-01-font-size: 0.875rem;
     --heading-01-font-weight: 600;
     --heading-01-line-height: 1.42857;
@@ -588,96 +531,6 @@ table {
     --heading-02-font-weight: 600;
     --heading-02-line-height: 1.5;
     --heading-02-letter-spacing: 0;
-    --productive-heading-01-font-size: 0.875rem;
-    --productive-heading-01-font-weight: 600;
-    --productive-heading-01-line-height: 1.28572;
-    --productive-heading-01-letter-spacing: 0.16px;
-    --productive-heading-02-font-size: 1rem;
-    --productive-heading-02-font-weight: 600;
-    --productive-heading-02-line-height: 1.375;
-    --productive-heading-02-letter-spacing: 0;
-    --productive-heading-03-font-size: 1.25rem;
-    --productive-heading-03-font-weight: 400;
-    --productive-heading-03-line-height: 1.4;
-    --productive-heading-03-letter-spacing: 0;
-    --productive-heading-04-font-size: 1.75rem;
-    --productive-heading-04-font-weight: 400;
-    --productive-heading-04-line-height: 1.28572;
-    --productive-heading-04-letter-spacing: 0;
-    --productive-heading-05-font-size: 2rem;
-    --productive-heading-05-font-weight: 400;
-    --productive-heading-05-line-height: 1.25;
-    --productive-heading-05-letter-spacing: 0;
-    --productive-heading-06-font-size: 2.625rem;
-    --productive-heading-06-font-weight: 300;
-    --productive-heading-06-line-height: 1.199;
-    --productive-heading-06-letter-spacing: 0;
-    --productive-heading-07-font-size: 3.375rem;
-    --productive-heading-07-font-weight: 300;
-    --productive-heading-07-line-height: 1.19;
-    --productive-heading-07-letter-spacing: 0;
-    --expressive-paragraph-01-font-size: 1.5rem;
-    --expressive-paragraph-01-font-weight: 300;
-    --expressive-paragraph-01-line-height: 1.334;
-    --expressive-paragraph-01-letter-spacing: 0;
-    --expressive-heading-01-font-size: 0.875rem;
-    --expressive-heading-01-font-weight: 600;
-    --expressive-heading-01-line-height: 1.42857;
-    --expressive-heading-01-letter-spacing: 0.16px;
-    --expressive-heading-02-font-size: 1rem;
-    --expressive-heading-02-font-weight: 600;
-    --expressive-heading-02-line-height: 1.5;
-    --expressive-heading-02-letter-spacing: 0;
-    --expressive-heading-03-font-size: 1.25rem;
-    --expressive-heading-03-font-weight: 400;
-    --expressive-heading-03-line-height: 1.4;
-    --expressive-heading-03-letter-spacing: 0;
-    --expressive-heading-04-font-size: 1.75rem;
-    --expressive-heading-04-font-weight: 400;
-    --expressive-heading-04-line-height: 1.28572;
-    --expressive-heading-04-letter-spacing: 0;
-    --expressive-heading-05-font-size: 2rem;
-    --expressive-heading-05-font-weight: 400;
-    --expressive-heading-05-line-height: 1.25;
-    --expressive-heading-05-letter-spacing: 0;
-    --expressive-heading-06-font-size: 2rem;
-    --expressive-heading-06-font-weight: 600;
-    --expressive-heading-06-line-height: 1.25;
-    --expressive-heading-06-letter-spacing: 0;
-    --quotation-01-font-family: 'IBM Plex Serif', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', serif;
-    --quotation-01-font-size: 1.25rem;
-    --quotation-01-font-weight: 400;
-    --quotation-01-line-height: 1.3;
-    --quotation-01-letter-spacing: 0;
-    --quotation-02-font-family: 'IBM Plex Serif', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', serif;
-    --quotation-02-font-size: 2rem;
-    --quotation-02-font-weight: 300;
-    --quotation-02-line-height: 1.25;
-    --quotation-02-letter-spacing: 0;
-    --display-01-font-size: 2.625rem;
-    --display-01-font-weight: 300;
-    --display-01-line-height: 1.19;
-    --display-01-letter-spacing: 0;
-    --display-02-font-size: 2.625rem;
-    --display-02-font-weight: 600;
-    --display-02-line-height: 1.19;
-    --display-02-letter-spacing: 0;
-    --display-03-font-size: 2.625rem;
-    --display-03-font-weight: 300;
-    --display-03-line-height: 1.19;
-    --display-03-letter-spacing: 0;
-    --display-04-font-size: 2.625rem;
-    --display-04-font-weight: 300;
-    --display-04-line-height: 1.19;
-    --display-04-letter-spacing: 0;
-    --legal-01-font-size: 0.75rem;
-    --legal-01-font-weight: 400;
-    --legal-01-line-height: 1.33333;
-    --legal-01-letter-spacing: 0.32px;
-    --legal-02-font-size: 0.875rem;
-    --legal-02-font-weight: 400;
-    --legal-02-line-height: 1.28572;
-    --legal-02-letter-spacing: 0.16px;
     --body-compact-01-font-size: 0.875rem;
     --body-compact-01-font-weight: 400;
     --body-compact-01-line-height: 1.28572;
@@ -722,53 +575,6 @@ table {
     --heading-07-font-weight: 300;
     --heading-07-line-height: 1.19;
     --heading-07-letter-spacing: 0;
-    --fluid-heading-03-font-size: 1.25rem;
-    --fluid-heading-03-font-weight: 400;
-    --fluid-heading-03-line-height: 1.4;
-    --fluid-heading-03-letter-spacing: 0;
-    --fluid-heading-04-font-size: 1.75rem;
-    --fluid-heading-04-font-weight: 400;
-    --fluid-heading-04-line-height: 1.28572;
-    --fluid-heading-04-letter-spacing: 0;
-    --fluid-heading-05-font-size: 2rem;
-    --fluid-heading-05-font-weight: 400;
-    --fluid-heading-05-line-height: 1.25;
-    --fluid-heading-05-letter-spacing: 0;
-    --fluid-heading-06-font-size: 2rem;
-    --fluid-heading-06-font-weight: 600;
-    --fluid-heading-06-line-height: 1.25;
-    --fluid-heading-06-letter-spacing: 0;
-    --fluid-paragraph-01-font-size: 1.5rem;
-    --fluid-paragraph-01-font-weight: 300;
-    --fluid-paragraph-01-line-height: 1.334;
-    --fluid-paragraph-01-letter-spacing: 0;
-    --fluid-quotation-01-font-family: 'IBM Plex Serif', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', serif;
-    --fluid-quotation-01-font-size: 1.25rem;
-    --fluid-quotation-01-font-weight: 400;
-    --fluid-quotation-01-line-height: 1.3;
-    --fluid-quotation-01-letter-spacing: 0;
-    --fluid-quotation-02-font-family: 'IBM Plex Serif', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', serif;
-    --fluid-quotation-02-font-size: 2rem;
-    --fluid-quotation-02-font-weight: 300;
-    --fluid-quotation-02-line-height: 1.25;
-    --fluid-quotation-02-letter-spacing: 0;
-    --fluid-display-01-font-size: 2.625rem;
-    --fluid-display-01-font-weight: 300;
-    --fluid-display-01-line-height: 1.19;
-    --fluid-display-01-letter-spacing: 0;
-    --fluid-display-02-font-size: 2.625rem;
-    --fluid-display-02-font-weight: 600;
-    --fluid-display-02-line-height: 1.19;
-    --fluid-display-02-letter-spacing: 0;
-    --fluid-display-03-font-size: 2.625rem;
-    --fluid-display-03-font-weight: 300;
-    --fluid-display-03-line-height: 1.19;
-    --fluid-display-03-letter-spacing: 0;
-    --fluid-display-04-font-size: 2.625rem;
-    --fluid-display-04-font-weight: 300;
-    --fluid-display-04-line-height: 1.19;
-    --fluid-display-04-letter-spacing: 0;
-    
 }
 
 p, h1, h2, h3, h3, h5, h6 {
@@ -1057,6 +863,11 @@ main {
     width: 100%;
     background-image: url(/images/3d-platonic-shapes.png);
     /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.06)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e"); */
+
+    &[data-bg-img-2] {
+        background-image: url(/images/3d-abstract-shape.png)
+    }
+
 }
 
 .AppContainer {
@@ -1212,7 +1023,16 @@ a.Header__name {
     padding-inline-end: 6rem;
     padding-block-start: 8.875rem;
     width: 31.25rem;
+
+    &[data-overflow-scroll] {
+        overflow-y: scroll;
+        max-block-size: 100dvh;
+        box-sizing: border-box;
+        scrollbar-width: none;
+    }
 }
+
+
 
 .login-sub-wrapper {
     flex-grow: 1;
@@ -1662,3 +1482,29 @@ input[data-invalid]~.FormRequirement {
     word-break: break-word;
 }
 
+
+h1 {
+    font-size: var(--heading-07-font-size);
+    font-weight: var(--heading-07-font-weight);
+    line-height: var(--heading-07-line-height);
+    letter-spacing: var(--heading-07-letter-spacing); 
+}
+
+h2 {
+    font-size: var(--heading-06-font-size);
+    font-weight: var(--heading-06-font-weight);
+    line-height: var(--heading-06-line-height);
+    letter-spacing: var(--heading-06-letter-spacing); 
+}
+
+p {
+    font-size: var(--body-long-01-font-size);
+    font-weight: var(--body-long-01-font-weight);
+    line-height: var(--body-long-01-line-height);
+    letter-spacing: var(--body-long-01-letter-spacing);
+}
+
+
+.Blog > * + * {
+    margin-top: 1rem;
+}

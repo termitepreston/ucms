@@ -27,7 +27,7 @@
                         </span>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="index.php?dashboard" class="Header__menuItem">
                         <span class="text-truncate-end">
                             <span class="Navbar__icon">
@@ -38,7 +38,7 @@
                             </span>
                         </span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </nav>
     </header>
