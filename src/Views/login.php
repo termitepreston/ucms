@@ -1,34 +1,3 @@
-<header class="Header Navbar">
-    <a href="index.php" class="Header__name"><span>μCMS</span></a>
-    <nav class="Header__nav">
-        <ul class="Header__menuBar">
-            <li>
-                <a href="index.php?dashboard" class="Header__menuItem">
-                    <span class="text-truncate-end">
-                        <span class="Navbar__icon">
-
-                        </span>
-                        <span class="Navbar__menuText">
-                            Dashboard
-                        </span>
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="index.php?dashboard" class="Header__menuItem">
-                    <span class="text-truncate-end">
-                        <span class="Navbar__icon">
-
-                        </span>
-                        <span class="Navbar__menuText">
-                            Sites
-                        </span>
-                    </span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
 <main class="login-wrapper">
     <div class="App">
         <div class="AppContainer">

@@ -1,6 +1,6 @@
 <h1>Create A New Blog Entry for <?= $username ?>.</h1>
 
-<form id="blogEntryForm" method="post" action="<?= $_SERVER['REQUEST_URI'];?>">
+<form id="blogEntryForm" method="post" action="<?= $_SERVER['REQUEST_URI']; ?>" style="padding-block-start: 3rem;">
 
     <div class="stack-vertical stack-scale-7">
         <?php require_once __DIR__ . '/renderErrors.php' ?>
